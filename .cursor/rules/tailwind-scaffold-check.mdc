@@ -1,0 +1,46 @@
+---
+description: After scaffolding a Next.js site, verify Tailwind CSS is actually generating utilities
+alwaysApply: true
+---
+
+# Tailwind scaffold verification
+
+After scaffolding or bootstrapping any Next.js + Tailwind project (manual or `create-next-app`), **always verify Tailwind utilities are loading** before handing off.
+
+## Required Tailwind v4 setup
+
+1. `postcss.config.mjs` includes `@tailwindcss/postcss`
+2. `app/globals.css` starts with:
+
+```css
+@import "tailwindcss" source("..");
+
+@source "../app/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../components/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../lib/**/*.{js,ts,jsx,tsx}";
+```
+
+3. `app/layout.tsx` imports `./globals.css`
+
+Without explicit `@source` paths, manually scaffolded projects often compile only base/theme CSS and **no utility classes** — the page looks unstyled.
+
+## Verification step (mandatory)
+
+Run after scaffold or any Tailwind wiring change:
+
+```bash
+npm run verify:tailwind
+```
+
+If the script is missing, add `scripts/verify-tailwind.mjs` and wire `"verify:tailwind"` in `package.json`, then run it.
+
+## Pass criteria
+
+Compiled CSS under `.next/` must include real utilities such as `.flex`, `.text-gold` (or project tokens), and an `@layer utilities` block with rules — not an empty utilities layer.
+
+## If verification fails
+
+1. Add/fix `@import "tailwindcss" source("..")` and `@source` paths in `globals.css`
+2. Confirm `postcss.config.mjs` exists and is loaded
+3. Re-run `npm run verify:tailwind`
+4. Only then start `npm run dev` and confirm styling in the browser

@@ -1,0 +1,47 @@
+@import "tailwindcss" source("..");
+
+@source "../app/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../components/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../lib/**/*.{js,ts,jsx,tsx}";
+
+@theme {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gold: #fec804;
+  --color-red: #e8342a;
+  --color-green: #2ecc71;
+
+  --font-display: var(--font-poppins);
+  --font-body: var(--font-poppins);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-gold) 40%, transparent);
+  color: var(--color-white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
