@@ -1,30 +1,31 @@
 # Umculo
 
-> Free, professional music websites for South African artists.
+> Custom artist websites for South African musicians.
 
-Umculo is a programme by [Qwabi Engineering](https://www.qwabi.co.za) in partnership with [Xhosa Hip Hop](https://xhosahiphop.co.za). We build custom artist websites — not templates — with SEO, blog, press pages, and two years of free hosting on `yourname.umculo.app`.
+Umculo builds and hosts music websites for South African artists. Monthly subscription. No setup fee. Sites run on `yourname.umculo.app`.
 
-## Key facts
+## Pricing
 
-- **Offer:** 10 free custom artist websites in the first batch
-- **Slots remaining:** 4 of 10 (as of 2026-07-02)
-- **Timeline:** ~2 weeks from application to launch
-- **Includes:** Custom design, responsive site, bio/music/gallery/press, blog, SEO + AI discovery optimisation, 2 years hosting
-- **Cost:** R0 for the launch cohort
-- **Contact:** WhatsApp (primary), email aya@qwabi.co.za, phone +27603116777
+- **Basic Website:** R99/month — profile, bio, gallery, press page
+- **Website + Blog:** R149/month
+- **Website + Music Sales:** R199/month
+- **Website + Merch:** R399/month
+- **Special Project:** from R699/month, quoted individually
 
-## Live examples
-
-- [Yung Savage QTN](https://savage.umculo.app)
-- [Mzukhona](https://mzukhona.umculo.app)
-
-## Pages
-
-- [Home](https://umculo.app/)
-- [Privacy Policy](https://umculo.app/privacy)
-- [Offer details](https://umculo.app/offer.md)
+Each tier includes everything in the tier below it.
 
 ## Operator
 
-Namoota Technology (Pty) Ltd, trading as Qwabi Engineering  
-https://business.qwabi.co.za
+Qwabi Engineering (Namoota Technology Pty Ltd), in partnership with Xhosa Hip Hop.
+
+## Contact
+
+- Form: https://umculo.app/#contact
+- Email: aya@qwabi.co.za
+- Phone: +27603116777
+
+## Live sites
+
+- https://savage.umculo.app
+- https://mzukhona.umculo.app
+- https://ndlulamthi.umculo.app

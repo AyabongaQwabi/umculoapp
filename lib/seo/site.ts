@@ -18,12 +18,11 @@ export const PARTNERS = {
   },
 } as const;
 
-export const LAST_UPDATED = "2026-07-02";
+export const LAST_UPDATED = "2026-07-06";
 
-export const PRIMARY_KEYWORD = "free artist website South Africa";
+export const PRIMARY_KEYWORD = "artist website South Africa";
 
-export const SEO_TITLE =
-  "Free Artist Website South Africa | Umculo";
+export const SEO_TITLE = "Artist Website South Africa | Umculo";
 
 export const SEO_DESCRIPTION =
-  "Get a custom music website FREE — hosting, SEO & yourname.umculo.app for 2 years. Only 4 slots left. Apply via WhatsApp →";
+  "Subscribe to an Umculo artist website from R99/month. Sign up, pay via Yoco secure checkout, and we build your site.";

@@ -1,42 +1,27 @@
-# Umculo — Free Artist Website Offer
+# Umculo — Artist Website Plans
 
-## Summary
+## Pricing (monthly, no setup fee)
 
-- **Programme:** Umculo free artist website batch (South Africa)
-- **Price:** R0 (free for first 10 artists)
-- **Slots:** 4 remaining of 10
-- **Delivery:** ~14 days application to launch
-- **Hosting:** 2 years included on `yourname.umculo.app`
+| Plan | Price | Includes |
+|------|-------|----------|
+| Basic Website | R99/month | Artist profile, bio, photo gallery, press page |
+| Website + Blog | R149/month | Everything in Basic + blog |
+| Website + Music Sales | R199/month | Everything above + sell music on site |
+| Website + Merch | R399/month | Everything above + sell merch |
+| Special Project | From R699/month | Quoted individually |
 
-## What's included
+Each tier includes everything in the tier below it.
 
-- Custom-designed website (not a generic template)
-- Fully responsive layout
-- Bio, music, gallery, press, and booking sections
-- Built-in blog
-- SEO and AI-discovery optimisation
-- Free hosting and subdomain for 2 years
+## Timeline
 
-## What's not included (free tier)
+About two weeks from enquiry to launch.
 
-- E-commerce / music store functionality
-- Paid upsells may be offered separately in future phases
+## Enquire
 
-## How to apply
-
-1. **WhatsApp (preferred):** https://wa.me/27603116777
-2. **Email:** aya@qwabi.co.za
-3. **Phone:** +27603116777
-
-## Live artist sites
-
-| Artist | URL | Status |
-|--------|-----|--------|
-| Yung Savage QTN | https://savage.umculo.app | Live |
-| Mzukhona | https://mzukhona.umculo.app | Live |
+- https://umculo.app/#contact
+- aya@qwabi.co.za
+- +27603116777
 
 ## Operator
 
-Qwabi Engineering (Namoota Technology Pty Ltd)  
-Partnership: Xhosa Hip Hop  
-Website: https://umculo.app
+Qwabi Engineering (Namoota Technology Pty Ltd) × Xhosa Hip Hop

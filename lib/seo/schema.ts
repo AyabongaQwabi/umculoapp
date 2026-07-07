@@ -1,5 +1,6 @@
 import { getFaqs } from "@/data/faqs";
-import { artists, slotsRemaining, TOTAL_SLOTS } from "@/data/artists";
+import { getLiveArtists } from "@/data/artists";
+import { pricingTiers } from "@/data/pricing";
 import {
   LAST_UPDATED,
   ORGANIZATION,
@@ -9,7 +10,7 @@ import {
 } from "@/lib/seo/site";
 
 export function buildHomeJsonLd() {
-  const liveArtists = artists.filter((artist) => artist.status === "live" && artist.url);
+  const liveArtists = getLiveArtists();
   const faqs = getFaqs();
 
   return {
@@ -54,7 +55,7 @@ export function buildHomeJsonLd() {
         url: SITE_URL,
         name: SITE_NAME,
         description:
-          "Free professional music websites for South African artists.",
+          "Professional music websites for South African artists.",
         publisher: { "@id": `${SITE_URL}/#organization` },
         inLanguage: "en-ZA",
       },
@@ -62,7 +63,7 @@ export function buildHomeJsonLd() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/#webpage`,
         url: SITE_URL,
-        name: "Free Artist Website South Africa | Umculo",
+        name: "Artist Website South Africa | Umculo",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         about: { "@id": `${SITE_URL}/#service` },
         dateModified: LAST_UPDATED,
@@ -71,34 +72,43 @@ export function buildHomeJsonLd() {
       {
         "@type": "Service",
         "@id": `${SITE_URL}/#service`,
-        name: "Umculo Free Artist Website",
+        name: "Umculo Artist Website",
         description:
-          "Custom-designed music websites for South African artists with SEO, blog, press pages, and two years of free hosting on umculo.app.",
+          "Custom-designed music websites for South African artists with SEO, blog, press pages, and hosting on umculo.app.",
         provider: { "@id": `${SITE_URL}/#organization` },
         areaServed: {
           "@type": "Country",
           name: "South Africa",
         },
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "ZAR",
-          availability: "https://schema.org/LimitedAvailability",
-          description: `${slotsRemaining} of ${TOTAL_SLOTS} artist slots remaining in the first free batch.`,
-        },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "Live Umculo artist websites",
-          itemListElement: liveArtists.map((artist, index) => ({
+          name: "Umculo website packages",
+          itemListElement: pricingTiers.map((tier, index) => ({
             "@type": "ListItem",
             position: index + 1,
             item: {
-              "@type": "WebSite",
-              name: artist.name,
-              url: artist.url,
+              "@type": "Offer",
+              name: tier.name,
+              price: tier.priceMonthly.replace(/[^\d]/g, "") || undefined,
+              priceCurrency: "ZAR",
+              description: tier.features.join(", ") || "Custom quote",
             },
           })),
         },
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${SITE_URL}/#portfolio`,
+        name: "Live Umculo artist websites",
+        itemListElement: liveArtists.map((artist, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "WebSite",
+            name: artist.name,
+            url: artist.url,
+          },
+        })),
       },
       {
         "@type": "FAQPage",

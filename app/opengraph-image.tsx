@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Umculo — Free Artist Websites for South Africa";
+export const alt = "Umculo — Artist Websites for South Africa";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -66,7 +66,7 @@ export default function OpenGraphImage() {
               maxWidth: "900px",
             }}
           >
-            Free Artist Websites for South Africa
+            Professional Artist Websites for South Africa
           </div>
           <div
             style={{
@@ -77,7 +77,7 @@ export default function OpenGraphImage() {
               fontWeight: 700,
             }}
           >
-            Custom design · SEO · 2 years hosting · 4 slots left
+            Custom design · SEO · Hosting from R99/month
           </div>
         </div>
 

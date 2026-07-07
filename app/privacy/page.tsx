@@ -36,8 +36,8 @@ export default function PrivacyPage() {
           <p>
             Umculo.app is operated by {ORGANIZATION.legalName}, trading as{" "}
             {ORGANIZATION.name} (&quot;we&quot;, &quot;us&quot;). This policy
-            explains how we handle information when you apply for a free artist
-            website or contact us.
+            explains how we handle information when you submit an enquiry via
+            our contact form, WhatsApp, email, or phone.
           </p>
 
           <section>
