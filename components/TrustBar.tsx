@@ -1,8 +1,8 @@
 import {
   Bot,
+  CircleDollarSign,
   Gauge,
   LayoutTemplate,
-  Music2,
   Search,
   Shield,
   Smartphone,
@@ -10,11 +10,11 @@ import {
 import { cn } from "@/lib/utils";
 
 const items = [
-  { icon: LayoutTemplate, label: "Professional Design" },
-  { icon: Search, label: "SEO & AI Optimized" },
-  { icon: Gauge, label: "Fast & Secure" },
-  { icon: Smartphone, label: "Mobile Ready" },
-  { icon: Music2, label: "Built for Artists" },
+  { icon: LayoutTemplate, label: "Custom Design" },
+  { icon: Search, label: "Search Setup" },
+  { icon: Gauge, label: "Fast Loading" },
+  { icon: Smartphone, label: "Mobile Friendly" },
+  { icon: CircleDollarSign, label: "No Setup Fee" },
 ] as const;
 
 interface TrustBarProps {
@@ -29,7 +29,7 @@ export function TrustBar({ className }: TrustBarProps) {
         className,
       )}
       role="list"
-      aria-label="Trust features"
+      aria-label="Site features"
     >
       {items.map(({ icon: Icon, label }, index) => (
         <div key={label} className="flex items-center" role="listitem">
@@ -51,5 +51,4 @@ export function TrustBar({ className }: TrustBarProps) {
   );
 }
 
-// Export unused icons for other sections if needed
 export { Bot, Shield };

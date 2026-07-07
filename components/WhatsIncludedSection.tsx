@@ -11,33 +11,37 @@ import { Reveal } from "@/components/Reveal";
 const included = [
   {
     icon: LayoutTemplate,
-    title: "Custom-designed",
-    description: "Not templated — built around your brand and story.",
+    title: "Custom design",
+    description:
+      "Built for your brand. Not a one-size-fits-all template.",
   },
   {
     icon: Smartphone,
-    title: "Fully responsive",
-    description: "Looks sharp on phones, tablets, and desktops.",
+    title: "Responsive layout",
+    description: "Readable and usable on phones, tablets, and desktops.",
   },
   {
     icon: Music2,
-    title: "Bio, music, gallery, press & booking",
-    description: "Everything a working artist needs in one place.",
+    title: "Artist pages",
+    description:
+      "Bio, music, photo gallery, press kit, and booking contact.",
   },
   {
     icon: FileText,
-    title: "Built-in blog",
-    description: "Share news, drops, and updates on your own terms.",
+    title: "Blog",
+    description: "Post updates, releases, and news on your own site.",
   },
   {
     icon: Bot,
-    title: "SEO + AI-discovery optimisation",
-    description: "Built to be found on Google and AI search tools.",
+    title: "Search setup",
+    description:
+      "Basic SEO so your site can be found on Google and similar tools.",
   },
   {
     icon: Globe,
-    title: "Free hosting & your own address",
-    description: "Yourname.umculo.app — hosted free for 2 years.",
+    title: "Domain and hosting",
+    description:
+      "Your site runs on yourname.umculo.app. Included in your monthly plan.",
   },
 ];
 
@@ -47,11 +51,16 @@ export function WhatsIncludedSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-gold">
-            The Package
+            Included
           </p>
           <h2 className="mt-3 font-display text-3xl font-black uppercase tracking-tight sm:text-4xl">
-            What&apos;s Included
+            What You Get
           </h2>
+          <p className="mt-4 max-w-2xl text-sm text-white/65">
+            Every plan includes design, hosting, and your umculo.app address.
+            Higher tiers add blog, music sales, or merch — see pricing for the
+            full list per plan.
+          </p>
         </Reveal>
 
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

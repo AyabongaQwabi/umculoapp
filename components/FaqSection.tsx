@@ -22,8 +22,7 @@ export function FaqSection() {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-sm text-white/65">
-            Common questions about Umculo&apos;s free artist website programme
-            in South Africa.
+            Answers about pricing, timelines, and how Umculo works.
           </p>
         </Reveal>
 

@@ -1,5 +1,3 @@
-import { slotsRemaining } from "@/data/artists";
-
 export interface FaqItem {
   question: string;
   answer: string;
@@ -8,33 +6,34 @@ export interface FaqItem {
 export function getFaqs(): FaqItem[] {
   return [
     {
-      question: "Is it actually free?",
+      question: "How do I pay?",
       answer:
-        "Yes — for the first ten artists in this batch. You get a custom-designed site, hosting, and your own umculo.app subdomain for two years at no cost. No hidden fees for this launch cohort.",
+        "Choose a plan, fill in the signup form, and continue to Yoco secure checkout. We save your details before payment. After you pay, Yoco sends you back to your signup page and we confirm from there.",
     },
     {
-      question: "What do I need to send you?",
+      question: "What if I don't finish checkout?",
       answer:
-        "Bio text, photos, music links (Spotify, YouTube, etc.), social handles, and any press or booking details you want on the site. We'll guide you through the rest during discovery.",
+        "Your signup is still saved when you submit the form. We can see it in our system and follow up if payment was not completed.",
     },
     {
-      question: "How long does it take?",
+      question: "How much does it cost?",
       answer:
-        "Roughly two weeks end-to-end: 2–3 days for discovery and design, about a week to build, and 2 days for testing and launch.",
+        "Basic Website is R99/month. Website + Blog is R149/month. Website + Music Sales is R199/month. Website + Merch is R399/month. Special projects start from R699/month. No setup fee.",
     },
     {
-      question: "What if all ten slots are gone?",
-      answer: `Right now ${slotsRemaining} slots remain. Once the batch is full, we'll open a waitlist and announce the next phase. Apply now to secure your spot.`,
+      question: "What happens after I pay on Yoco?",
+      answer:
+        "Once payment is confirmed, we email you to collect your bio, photos, music links, and other content. Your site is usually live within about two weeks.",
     },
     {
-      question: "Who's behind Umculo?",
+      question: "How long does a build take?",
       answer:
-        "Umculo is built by Qwabi Engineering in partnership with Xhosa Hip Hop — a platform to give South African music artists a real home on the internet, starting with ten free professional websites.",
+        "About two weeks from confirmed payment: 2–3 days for design, about one week to build, 2 days for review and launch.",
     },
     {
-      question: "What is Umculo?",
+      question: "Who runs Umculo?",
       answer:
-        "Umculo is a South African programme that builds free, professional music websites for artists — including custom design, SEO optimisation, bio and music pages, a blog, and two years of hosting on your own yourname.umculo.app address.",
+        "Umculo is run by Qwabi Engineering (Namoota Technology Pty Ltd) in partnership with Xhosa Hip Hop. Sites are hosted on yourname.umculo.app.",
     },
   ];
 }

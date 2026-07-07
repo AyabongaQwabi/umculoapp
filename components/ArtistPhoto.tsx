@@ -9,8 +9,8 @@ interface ArtistPhotoProps {
 }
 
 export function ArtistPhoto({ artist, size = "sm" }: ArtistPhotoProps) {
-  const isLive = artist.status === "live";
   const dimension = size === "sm" ? 72 : 96;
+  const hasLink = Boolean(artist.url);
 
   const photo = (
     <div className="flex flex-col items-center gap-2">
@@ -26,25 +26,11 @@ export function ArtistPhoto({ artist, size = "sm" }: ArtistPhotoProps) {
             alt={artist.name}
             width={dimension}
             height={dimension}
-            className={cn(
-              "h-full w-full object-cover",
-              !isLive && "grayscale contrast-125",
-            )}
-            style={
-              !isLive
-                ? {
-                    filter: "grayscale(1) sepia(1) saturate(4) hue-rotate(-15deg)",
-                  }
-                : undefined
-            }
+            className="h-full w-full object-cover"
           />
         ) : (
           <div
-            className={cn(
-              "flex h-full w-full items-center justify-center bg-white/5 font-display text-lg font-black uppercase",
-              !isLive && "text-red/90",
-              isLive && "text-gold",
-            )}
+            className="flex h-full w-full items-center justify-center bg-white/5 font-display text-lg font-black uppercase text-gold"
             aria-hidden="true"
           >
             {artist.name
@@ -61,7 +47,7 @@ export function ArtistPhoto({ artist, size = "sm" }: ArtistPhotoProps) {
     </div>
   );
 
-  if (isLive && artist.url) {
+  if (hasLink && artist.url) {
     return (
       <Link
         href={artist.url}

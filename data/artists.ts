@@ -1,29 +1,31 @@
-export type ArtistStatus = "live" | "production";
-
 export interface Artist {
   name: string;
-  status: ArtistStatus;
   url?: string;
   photo?: string;
 }
 
-export const TOTAL_SLOTS = 10;
-
 export const artists: Artist[] = [
-  { name: "Flash Ikumkani", status: "production" },
-  { name: "Gxarha", status: "production" },
-  { name: "Ndlulamthi", status: "production" },
+  { name: "Flash Ikumkani" },
+  { name: "Gxarha" },
+  {
+    name: "Ndlulamthi",
+    url: "https://ndlulamthi.umculo.app",
+  },
   {
     name: "Mzukhona",
-    status: "live",
     url: "https://mzukhona.umculo.app",
   },
-  { name: "Lordie", status: "production" },
+  { name: "Lordie" },
   {
     name: "Yung Savage QTN",
-    status: "live",
     url: "https://savage.umculo.app",
   },
 ];
 
-export const slotsRemaining = TOTAL_SLOTS - artists.length;
+export const TOTAL_ARTISTS = artists.length;
+
+export function getLiveArtists(): Array<Artist & { url: string }> {
+  return artists.filter((artist): artist is Artist & { url: string } =>
+    Boolean(artist.url),
+  );
+}

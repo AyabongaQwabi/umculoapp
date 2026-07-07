@@ -1,81 +1,76 @@
 import Image from "next/image";
+import { BookOpen, Check, Megaphone, Newspaper } from "lucide-react";
+import { getLiveArtists } from "@/data/artists";
 import {
-  BookOpen,
-  Check,
-  Megaphone,
-  Newspaper,
-  Sparkles,
-} from "lucide-react";
-import { slotsRemaining, TOTAL_SLOTS } from "@/data/artists";
+  getStandardSiteIncludes,
+  HIGHER_TIER_INCLUDES_NOTE,
+} from "@/data/pricing";
 import { PARTNERS } from "@/lib/seo/site";
-import { ApplyCta } from "@/components/ApplyCta";
-import { BrushBadge } from "@/components/BrushBadge";
 import { Reveal } from "@/components/Reveal";
+import { ScrollCta } from "@/components/ScrollCta";
 
 const features = [
   {
     icon: Newspaper,
-    title: "Press Ready",
-    description: "Give journalists what they need.",
+    title: "Press page",
+    description:
+      "One link for journalists — bio, photos, and contact details in one place.",
   },
   {
     icon: BookOpen,
-    title: "Blog & Updates",
-    description: "Share your story. Your way.",
+    title: "Blog",
+    description:
+      "Post news, releases, and show dates on your own site, not only on social media.",
   },
   {
     icon: Megaphone,
-    title: "Fan Comms",
-    description: "Keep fans informed. Build loyalty.",
+    title: "Fan updates",
+    description:
+      "Share announcements on a page you control. No algorithm deciding who sees it.",
   },
   {
-    icon: Sparkles,
-    title: "Build Your Brand",
-    description: "Look professional. Be unforgettable.",
+    icon: Newspaper,
+    title: "Search visibility",
+    description:
+      "Your site can show up on Google when people search your name or music.",
   },
 ];
 
-const checklist = [
-  "Professional artist website",
-  "Optimized for Google & AI",
-  "Press kit & media ready",
-  "Blog, news & announcements",
-  "Fan engagement tools",
-  "Yours. Forever.",
-];
+const checklist = getStandardSiteIncludes();
+
+function formatLiveSiteUrl(url: string) {
+  return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+}
 
 export function RealWebsiteSection() {
+  const liveArtists = getLiveArtists();
   return (
     <section className="border-t border-white/10 py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <h2 className="max-w-3xl font-display text-3xl font-black uppercase leading-tight tracking-tight sm:text-4xl">
-            A Real Artist Needs A Real Website
+            Your Own Website, Not Just Social Media
           </h2>
           <p className="mt-4 max-w-2xl text-base text-white/75 sm:text-lg">
-            Social media is noisy and temporary. A professional musician website
-            is your official home for press, blog updates, and fan
-            communication — and it helps you get discovered on Google and AI
-            search.
+            Social accounts are useful, but you do not own them. A website is
+            yours — a fixed address for press, fans, and search engines to find
+            your music, bio, and contact details.
           </p>
           <p className="mt-4 text-sm text-white/60">
-            See live Umculo builds:{" "}
-            <a
-              href="https://savage.umculo.app"
-              className="text-gold underline-offset-2 hover:underline"
-              rel="noopener noreferrer"
-            >
-              savage.umculo.app
-            </a>
-            ,{" "}
-            <a
-              href="https://mzukhona.umculo.app"
-              className="text-gold underline-offset-2 hover:underline"
-              rel="noopener noreferrer"
-            >
-              mzukhona.umculo.app
-            </a>
-            . Programme partners:{" "}
+            Live sites:{" "}
+            {liveArtists.map((artist, index) => (
+              <span key={artist.url}>
+                {index > 0 ? ", " : null}
+                <a
+                  href={artist.url}
+                  className="text-gold underline-offset-2 hover:underline"
+                  rel="noopener noreferrer"
+                >
+                  {formatLiveSiteUrl(artist.url)}
+                </a>
+              </span>
+            ))}
+            . Built by{" "}
             <a
               href="https://www.qwabi.co.za"
               className="text-gold underline-offset-2 hover:underline"
@@ -83,7 +78,7 @@ export function RealWebsiteSection() {
             >
               Qwabi Engineering
             </a>{" "}
-            ×{" "}
+            and{" "}
             <a
               href={PARTNERS.xhosaHipHop.url}
               className="text-gold underline-offset-2 hover:underline"
@@ -133,18 +128,21 @@ export function RealWebsiteSection() {
             </div>
           </div>
           <p className="mt-14 text-center text-xs uppercase tracking-widest text-white/40">
-            Live site — savage.umculo.app
+            savage.umculo.app — desktop and mobile
           </p>
         </Reveal>
 
         <Reveal delay={0.15} className="mt-14">
           <div className="mx-auto max-w-2xl rounded-lg border border-gold/50 bg-black p-6 sm:p-8">
             <h3 className="text-center font-display text-lg font-black uppercase tracking-wide sm:text-xl">
-              Don&apos;t Just Make Music. Build a Legacy.
+              Standard Site Includes
             </h3>
             <ul className="mt-6 space-y-3">
               {checklist.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm sm:text-base">
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-sm sm:text-base"
+                >
                   <Check
                     className="mt-0.5 h-5 w-5 shrink-0 text-green"
                     aria-hidden="true"
@@ -152,15 +150,22 @@ export function RealWebsiteSection() {
                   <span>{item}</span>
                 </li>
               ))}
+              <li className="flex items-start gap-3 text-sm text-white/70 sm:text-base">
+                <span className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
+                <span>{HIGHER_TIER_INCLUDES_NOTE}</span>
+              </li>
             </ul>
           </div>
         </Reveal>
 
-        <Reveal delay={0.2} className="mt-12 flex flex-col items-center gap-6">
-          <BrushBadge>
-            {slotsRemaining}/{TOTAL_SLOTS} Artist Slots Remaining
-          </BrushBadge>
-          <ApplyCta />
+        <Reveal
+          delay={0.2}
+          className="mt-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
+        >
+          <ScrollCta href="#pricing">Choose a Plan</ScrollCta>
+          <ScrollCta href="#contact" variant="secondary" className="sm:min-w-[12rem]">
+            Sign Up
+          </ScrollCta>
         </Reveal>
       </div>
     </section>

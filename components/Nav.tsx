@@ -3,13 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ApplyCta } from "@/components/ApplyCta";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "#artists", label: "Artists" },
+  { href: "#pricing", label: "Pricing" },
   { href: "#how-it-works", label: "How It Works" },
-  { href: "#apply", label: "Apply" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -33,7 +32,11 @@ export function Nav() {
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="#" className="flex items-center gap-3" aria-label="Umculo home">
+        <Link
+          href="#"
+          className="flex items-center gap-3"
+          aria-label="Umculo home"
+        >
           <Image
             src="/umculo-logo.png"
             alt=""
@@ -60,10 +63,6 @@ export function Nav() {
             </Link>
           ))}
         </nav>
-
-        <div className="hidden md:block">
-          <ApplyCta compact href="#apply" className="max-w-[11rem]" />
-        </div>
 
         <button
           type="button"
@@ -115,9 +114,6 @@ export function Nav() {
                 </Link>
               </li>
             ))}
-            <li className="pt-2">
-              <ApplyCta compact href="#apply" />
-            </li>
           </ul>
         </nav>
       )}

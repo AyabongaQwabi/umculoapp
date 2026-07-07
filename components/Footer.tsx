@@ -3,10 +3,10 @@ import Link from "next/link";
 import { LAST_UPDATED, ORGANIZATION, PARTNERS, SITE_URL } from "@/lib/seo/site";
 
 const footerLinks = [
-  { href: "#artists", label: "Artists" },
+  { href: "#pricing", label: "Pricing" },
   { href: "#how-it-works", label: "How It Works" },
+  { href: "#contact", label: "Contact" },
   { href: "#faq", label: "FAQ" },
-  { href: "#apply", label: "Apply" },
   { href: "/privacy", label: "Privacy Policy" },
 ];
 
@@ -20,14 +20,15 @@ export function Footer() {
           <div>
             <Image
               src="/umculo-logo.png"
-              alt="Umculo — Every Artist Deserves a Home on the Internet"
+              alt="Umculo — artist websites for South African musicians"
               width={220}
               height={120}
               className="h-auto w-44 max-w-full"
             />
             <p className="mt-4 text-xs leading-relaxed text-white/50">
-              Free professional music websites for South African artists.
-              Programme by {ORGANIZATION.name} × {PARTNERS.xhosaHipHop.name}.
+              Custom music websites for South African artists. Monthly plans
+              from R99. Built by {ORGANIZATION.name} and{" "}
+              {PARTNERS.xhosaHipHop.name}.
             </p>
           </div>
 

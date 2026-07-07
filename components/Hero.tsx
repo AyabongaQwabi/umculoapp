@@ -1,50 +1,38 @@
-import {
-  Globe,
-  Mic2,
-  Search,
-  Users,
-} from "lucide-react";
-import { artists, slotsRemaining, TOTAL_SLOTS } from "@/data/artists";
-import { LAST_UPDATED, PARTNERS } from "@/lib/seo/site";
-import { ApplyCta } from "@/components/ApplyCta";
+import { CreditCard, Globe, Mic2, Search, Smartphone } from "lucide-react";
+import { artists, TOTAL_ARTISTS } from "@/data/artists";
+import { PARTNERS } from "@/lib/seo/site";
 import { ArtistPhoto } from "@/components/ArtistPhoto";
-import { BrushBadge } from "@/components/BrushBadge";
 import { Reveal } from "@/components/Reveal";
-import { TaglineEyebrow } from "@/components/TaglineEyebrow";
+import { ScrollCta } from "@/components/ScrollCta";
 import { TrustBar } from "@/components/TrustBar";
 
 const features = [
-  { icon: Globe, label: "Own Your Story" },
-  { icon: Mic2, label: "Showcase Your Music" },
-  { icon: Users, label: "Grow Your Fanbase" },
-  { icon: Search, label: "Get Discovered on Google & AI" },
+  { icon: Globe, label: "Your own yourname.umculo.app address" },
+  { icon: Mic2, label: "Bio, music, gallery, and press pages" },
+  { icon: Smartphone, label: "Works on phone, tablet, and desktop" },
+  { icon: Search, label: "Set up for Google and search engines" },
 ];
 
 export function Hero() {
-  const previewArtists = artists.slice(0, 6);
-
   return (
     <section className="relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-20">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-10">
         <Reveal>
-          <TaglineEyebrow className="mb-6 justify-start" />
+          <p className="mb-6 font-display text-xs font-bold uppercase tracking-[0.22em] text-gold">
+            {TOTAL_ARTISTS} South African artist websites built
+          </p>
           <h1 className="font-display text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
-            Every Artist
+            Subscribe Today.
             <br />
-            Deserves a <span className="text-gold">Home</span>
-            <br />
-            on the Internet.
+            <span className="text-gold">Get Your Home On The Internet.</span>
           </h1>
-          <p className="mt-6 max-w-lg text-base text-white/75 sm:text-lg">
-            Build your own professional music website for{" "}
-            <span className="font-semibold text-gold">FREE</span>.
+          <p className="mt-6 max-w-xl text-base text-white/75 sm:text-lg">
+            Pick a monthly plan, fill in your details, and pay securely via
+            Yoco. We save your signup before payment so we can follow up even
+            if checkout is interrupted.
           </p>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base">
-            <strong className="text-white">Umculo</strong> is a free artist
-            website programme for South African musicians — custom design, SEO,
-            and{" "}
-            <span className="text-white/85">yourname.umculo.app</span> hosting
-            for two years. Built by{" "}
+            By{" "}
             <a
               href="https://www.qwabi.co.za"
               className="text-gold underline-offset-2 hover:underline"
@@ -52,7 +40,7 @@ export function Hero() {
             >
               Qwabi Engineering
             </a>{" "}
-            with{" "}
+            and{" "}
             <a
               href={PARTNERS.xhosaHipHop.url}
               className="text-gold underline-offset-2 hover:underline"
@@ -60,11 +48,7 @@ export function Hero() {
             >
               {PARTNERS.xhosaHipHop.name}
             </a>
-            .{" "}
-            <span className="text-white/50">
-              Updated {LAST_UPDATED}. {slotsRemaining} of {TOTAL_SLOTS} slots
-              open.
-            </span>
+            . From R99/month. No setup fee.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-2">
@@ -74,15 +58,29 @@ export function Hero() {
                   className="mt-0.5 h-5 w-5 shrink-0 text-gold"
                   aria-hidden="true"
                 />
-                <span className="text-sm font-medium text-white/85">{label}</span>
+                <span className="text-sm font-medium text-white/85">
+                  {label}
+                </span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-10 space-y-6">
-            <ApplyCta />
-            <TrustBar className="border-x-0" />
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-stretch">
+            <ScrollCta href="#pricing" className="sm:min-w-[12rem]">
+              <span className="inline-flex items-center gap-2">
+                <CreditCard className="h-4 w-4" aria-hidden="true" />
+                Choose a Plan
+              </span>
+            </ScrollCta>
+            <ScrollCta
+              href="#contact"
+              variant="secondary"
+              className="sm:min-w-[12rem]"
+            >
+              Sign Up
+            </ScrollCta>
           </div>
+          <TrustBar className="mt-8 border-x-0" />
         </Reveal>
 
         <Reveal delay={0.1} className="relative min-h-[22rem] lg:min-h-[28rem]">
@@ -97,27 +95,15 @@ export function Hero() {
           />
           <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black via-black/40 to-transparent" />
 
-          <div className="absolute right-2 top-2 sm:right-4 sm:top-4">
-            <BrushBadge rotate="right">
-              Only {TOTAL_SLOTS} Free Websites Available!
-            </BrushBadge>
-          </div>
-
-          <div className="absolute inset-x-4 bottom-20 rounded-lg border border-white/10 bg-black/80 p-4 backdrop-blur-sm sm:inset-x-6">
+          <div className="absolute inset-x-4 bottom-8 rounded-lg border border-white/10 bg-black/80 p-4 backdrop-blur-sm sm:inset-x-6">
             <p className="mb-4 font-display text-xs font-bold uppercase tracking-[0.2em] text-gold">
-              Artists in Progress:
+              Recent builds
             </p>
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-3">
-              {previewArtists.map((artist) => (
+              {artists.map((artist) => (
                 <ArtistPhoto key={artist.name} artist={artist} />
               ))}
             </div>
-          </div>
-
-          <div className="absolute bottom-4 right-2 sm:right-4">
-            <BrushBadge rotate="left">
-              {slotsRemaining}/{TOTAL_SLOTS} Artist Slots Remaining
-            </BrushBadge>
           </div>
         </Reveal>
       </div>
