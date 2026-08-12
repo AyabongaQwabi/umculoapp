@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { rootMetadata } from "@/lib/seo/metadata";
 import "./globals.css";
 
@@ -19,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-ZA" className={poppins.variable}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
