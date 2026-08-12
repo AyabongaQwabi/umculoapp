@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import { LAST_UPDATED, ORGANIZATION } from "@/lib/seo/site";
+import { buildBreadcrumbJsonLd } from "@/lib/seo/schema";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -20,6 +22,11 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <>
+      <JsonLd
+        data={buildBreadcrumbJsonLd([
+          { name: "Privacy Policy", path: "/privacy" },
+        ])}
+      />
       <Nav />
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 sm:px-6">
         <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-gold">

@@ -22,7 +22,7 @@ export function Hero() {
             {TOTAL_ARTISTS} South African artist websites built
           </p>
           <h1 className="font-display text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
-            Subscribe Today.
+            Your Artist Website, South Africa.
             <br />
             <span className="text-gold">Get Your Home On The Internet.</span>
           </h1>

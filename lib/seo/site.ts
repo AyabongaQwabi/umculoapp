@@ -1,4 +1,13 @@
-export const SITE_URL = "https://umculo.app";
+/**
+ * Canonical base URL for the site. Sourced from NEXT_PUBLIC_SITE_URL so the
+ * same code works across local dev, preview deployments, and production
+ * without hardcoding the domain. Set NEXT_PUBLIC_SITE_URL in `.env.local`
+ * (see `.env.example`).
+ */
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+).replace(/\/$/, "");
+
 export const SITE_NAME = "Umculo";
 
 export const ORGANIZATION = {

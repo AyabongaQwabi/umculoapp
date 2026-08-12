@@ -36,6 +36,7 @@ export function buildHomeJsonLd() {
           ORGANIZATION.website,
           PARTNERS.xhosaHipHop.url,
           "https://www.qwabi.co.za",
+          ...liveArtists.map((artist) => artist.url),
         ],
         founder: {
           "@type": "Person",
@@ -48,6 +49,15 @@ export function buildHomeJsonLd() {
           name: PARTNERS.xhosaHipHop.name,
           url: PARTNERS.xhosaHipHop.url,
         },
+        // Umculo is the parent entity/hub for the umculo.app artist network —
+        // each live artist site is an owned subdomain property, so surfacing
+        // them here helps AI/search engines associate the whole roster with
+        // this Organization entity.
+        subjectOf: liveArtists.map((artist) => ({
+          "@type": "WebSite",
+          name: artist.name,
+          url: artist.url,
+        })),
       },
       {
         "@type": "WebSite",
@@ -123,5 +133,24 @@ export function buildHomeJsonLd() {
         })),
       },
     ],
+  };
+}
+
+/** BreadcrumbList JSON-LD for a secondary page relative to the homepage. */
+export function buildBreadcrumbJsonLd(
+  items: Array<{ name: string; path: string }>,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { name: "Home", path: "/" },
+      ...items,
+    ].map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.path === "/" ? "" : item.path}`,
+    })),
   };
 }
